@@ -15,7 +15,7 @@
 
 ## Project Description
 
-Deadline Detective 2.0 is a responsive web application for university students to organize assignments, monitor deadlines, plan study time and track progress. Students can add, edit, delete, search, filter and complete assignments. The dashboard highlights approaching deadlines and Rescue Mode helps students identify urgent tasks. The Study Planner produces a timetable based on available hours and study-session preferences.
+Deadline Detective is a responsive web application for university students to organize assignments, monitor deadlines, plan study time and track progress. Students can add, edit, delete, search, filter and complete assignments. The dashboard highlights approaching deadlines and Rescue Mode helps students identify urgent tasks. The Study Planner produces a timetable based on available hours and study-session preferences.
 
 ## Target Users
 
