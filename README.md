@@ -1,4 +1,4 @@
-# Deadline Detective 2.0
+# Deadline Detective Web
 
 **Project:** Responsive Web-Based Assignment and Study Planner  
 **Course:** Mobile Application Development (instructor-approved web development adaptation)  
