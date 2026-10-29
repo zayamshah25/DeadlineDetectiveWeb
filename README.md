@@ -131,4 +131,4 @@ Each member should make at least one genuine commit from their own GitHub accoun
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
 - [GitHub Documentation](https://docs.github.com/)
-- ChatGPT (OpenAI) was used for drafting and development assistance; the group reviews the final submission.
+
