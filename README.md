@@ -1,107 +1,134 @@
-# Deadline Detective — Web Application
+# Deadline Detective 2.0
 
-**Group name:** Team Deadline Detectives  
-**Course:** Mobile Application Development  
-**Assignment:** Assignment 1 — Plan, Design and Prototype  
-**Repository:** https://github.com/zayamshah25/DeadlineDetectiveWeb
+**Project:** Responsive Web-Based Assignment and Study Planner  
+**Course:** Mobile Application Development (instructor-approved web development adaptation)  
+**Assignment:** Assignment 1 - Plan, Design and Prototype  
+**Group name / number:** Deadline Detective Web
 
-## Group members
+## Group Members
+
 | Name | Student ID |
+|---|---|
 | Zayam Ali Shah | SE018 |
 | Amina Zahoor | SE065 |
-| Haseeb Ahmed | SE056 |
+| Haseeb Ahmed | SE045 |
 
-## Project description
-Deadline Detective is a student-focused **web application** for organizing assignments and monitoring academic deadlines. Students can create and update coursework tasks, mark assignments complete, find upcoming or overdue work, and plan study time. A dashboard summarizes workload and progress. The goal is to reduce missed deadlines and help students manage coursework in one place.
+## Project Description
 
-**Target users:** university and college students managing multiple subjects and deadlines.  
-**Value proposition:** one clear workspace for assignments, deadlines, priorities, and study planning.
+Deadline Detective 2.0 is a responsive web application for university students to organize assignments, monitor deadlines, plan study time and track progress. Students can add, edit, delete, search, filter and complete assignments. The dashboard highlights approaching deadlines and Rescue Mode helps students identify urgent tasks. The Study Planner produces a timetable based on available hours and study-session preferences.
 
-## Planned features (MoSCoW)
+## Target Users
 
-### Must have
-- Add, view, edit, and delete assignments (CRUD).
-- Store assignment title, subject, due date, estimated study hours, and priority.
-- Mark assignments complete or incomplete.
-- Show assignments and their deadline status in a list.
-- Persist records in a SQLite database through the backend.
+University students managing coursework across multiple subjects.
 
-### Should have
-- Search, filter, and sort assignments.
-- Study planner based on upcoming work.
-- Dashboard statistics and progress summaries.
-- Visual indicators for upcoming and overdue deadlines.
+## Features (MoSCoW)
 
-### Could have
-- Student account login and session management (implemented in current prototype).
-- Theme switching / dark mode (implemented in current prototype).
-- Future reminder notifications or optional export.
+### Must Have
+- Create assignments with title, subject, deadline and estimated hours.
+- View assignments and their completion status.
+- Edit and delete assignments.
+- Mark assignments completed or undo completion.
+- Search, filter and sort assignments.
+- Persist assignments in Cloud Firestore with user-specific security rules.
 
-### Won't have in the initial web scope
-- Native Android/iOS application.
-- Mobile emulator-based Hello World demo.
-- Cloud synchronization or complex team collaboration.
+### Should Have
+- Daily study timetable with planned sessions and breaks.
+- Rescue Mode for urgent tasks.
+- In-app deadline warnings while the website is open.
+- Progress statistics and analytics.
 
-## Chosen technology stack
-| Layer | Technology | Purpose |
-| --- | --- | --- |
-| Frontend | React 19, Vite 7, JavaScript, CSS | Browser-based user interface |
-| Backend | Node.js, Express | REST API and authentication |
-| Database | SQLite with `better-sqlite3` | Persistent server-side data |
-| Version control | Git, GitHub | Team collaboration and submission |
+### Could Have
+- Student registration, login and profile management.
+- Additional interface polish and accessibility improvements.
 
-**App type:** Web application, not a native or cross-platform mobile application. SQLite is stored on the server, **not on a phone**. The course's mobile-only requirements, if enforced, need instructor clarification; this README does not claim they have been completed.
+## Technology Stack
 
-## Setup instructions
-**Requirements:** Node.js (recent LTS release), npm, Git, a web browser.
+- **Frontend:** HTML5, CSS3, JavaScript (ES modules)
+- **Authentication:** Firebase Authentication
+- **Database:** Cloud Firestore
+- **Charts:** Chart.js
+- **Development:** Visual Studio Code, Live Server, browser DevTools
+- **Version control:** Git and GitHub
+- **Hosting option:** Netlify static hosting
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/zayamshah25/DeadlineDetectiveWeb.git
-   cd DeadlineDetectiveWeb
-   ```
-2. Start the backend in terminal 1:
-   ```bash
-   cd server
-   npm install
-   npm start
-   ```
-   Backend runs at `http://localhost:3000`. SQLite database is created automatically in `server/` when the server starts.
-3. Start the frontend in terminal 2 (from the project root):
-   ```bash
-   cd client
-   npm install
-   npm run dev
-   ```
-4. Open the local URL shown by Vite (typically `http://127.0.0.1:5173`). Keep both terminals running.
+This is a browser-based web application, not a native Android or iOS application. The original mobile assignment's local database and emulator requirements are replaced by a cloud-backed web workflow as agreed with the instructor.
 
-**Troubleshooting:** If the frontend cannot load data, check that the backend is running on port 3000. The frontend currently points to `http://localhost:3000` in `client/src/App.jsx`. Do not upload your `.db` or `.env` files.
+## Project Structure
 
-## Repository structure
 ```text
-DeadlineDetectiveWeb/
-├── client/                  # React/Vite web frontend
-│   ├── src/
-│   ├── index.html
-│   └── package.json
-├── server/                  # Express backend and SQLite integration
-│   ├── server.js
-│   └── package.json
-├── docs/                    # Project documentation and evidence
-│   ├── screenshots/         # Add actual screenshots here
-│   └── wireframes/          # Web wireframe descriptions
-├── .gitignore
-└── README.md
+Deadline Detective 2.0/
+├── index.html
+├── login.html
+├── register.html
+├── dashboard.html
+├── assignments.html
+├── planner.html
+├── analytics.html
+├── profile.html
+├── css/
+│   ├── style.css
+│   ├── dashboard.css
+│   ├── assignments.css
+│   ├── planner.css
+│   ├── analytics.css
+│   └── profile.css
+├── js/
+│   ├── firebase.js
+│   ├── auth.js
+│   ├── dashboard.js
+│   ├── assignments.js
+│   ├── planner.js
+│   ├── analytics.js
+│   └── profile.js
+└── assets/
+    └── images/
 ```
 
-## Design and project documentation
-- [Web screen flow](docs/screen-flow.md)
-- [Web wireframes](docs/wireframes/README.md)
-- [Style guide](docs/style-guide.md)
-- [Functional and nonfunctional requirements](docs/requirements.md)
-- [Tech stack and alternatives](docs/tech-stack.md)
-- [Project timeline, risks, and working agreement](docs/project-plan.md)
-- [Team contributions and Git evidence](docs/team-contributions.md)
-- [Submission checklist](docs/submission-checklist.md)
+Additional CSS and JavaScript files may exist in the working project.
 
+## Setup Instructions
 
+1. Install **Visual Studio Code** and the **Live Server** extension.
+2. Download or clone the repository and open its root folder in VS Code.
+3. Create a Firebase project, enable **Authentication** (Email/Password) and **Cloud Firestore**, and configure the project's web Firebase settings in `js/firebase.js`.
+4. Publish appropriate user-scoped Firestore security rules. Never use unrestricted production rules.
+5. Add the local development hostname and any deployed hostname to Firebase Authentication's authorized domains when needed.
+6. Right-click `index.html` and select **Open with Live Server**.
+7. Register a test account and verify the dashboard, assignments, planner and analytics pages.
+
+> Do not open the HTML files directly with `file://`; ES module imports and authentication should be tested using a local HTTP server.
+
+## How to Use
+
+1. Open the website and create an account or sign in.
+2. Add an assignment with its subject, deadline and estimated hours.
+3. View or update assignments and mark completed work.
+4. Use the dashboard to see progress and deadline alerts.
+5. Generate a daily study plan and review analytics.
+6. Open Profile to manage account details.
+
+## Repository and Contribution Evidence
+
+**Repository URL:** https://github.com/zayamshah25/DeadlineDetectiveWeb
+
+Each member should make at least one genuine commit from their own GitHub account and record what they contributed. Attach the repository and commit-history screenshots to the assignment report.
+
+## Planned Semester Work
+
+- **Assignment 2:** Responsive UI and navigation.
+- **Assignment 3:** Firebase data persistence, CRUD, validation, search and study planning.
+- **Assignment 4:** Rescue Mode, deadline alerts, testing, polish and documentation.
+
+## Known Limitations
+
+- Cloud Firestore requires connectivity for reliable server synchronization; offline persistence is not claimed.
+- Deadline reminders are in-app alerts and do not deliver push notifications when the browser is closed.
+- Actual GitHub URL, group number and member commit evidence must be added before submission.
+
+## References and Tools
+
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
+- [GitHub Documentation](https://docs.github.com/)
+- ChatGPT (OpenAI) was used for drafting and development assistance; the group reviews the final submission.
