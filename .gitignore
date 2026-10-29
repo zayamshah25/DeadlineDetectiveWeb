@@ -1,11 +1,43 @@
-node_modules/
+
+# Deadline Detective 2.0
+# HTML, CSS, JavaScript and Firebase
+
+# Environment variables and secrets
 .env
 .env.*
 !.env.example
-*.db
-*.db-*
-*.sqlite
-*.sqlite-*
-*.sqlite3
-*.sqlite3-*
-dist/
+
+# Firebase local emulator files
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Firebase service account credentials
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+*service-account*.json
+
+# Editor settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Local test coverage
+coverage/
