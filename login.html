@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/final-polish.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b1d">
+  <title>Login | Deadline Detective</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+  <div class="auth-orb orb-purple"></div>
+  <div class="auth-orb orb-cyan"></div>
+
+  <header class="auth-header">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">✦</span>
+      Deadline<span>Detective</span>
+    </a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </header>
+
+  <main class="auth-layout">
+    <section class="auth-showcase">
+      <div class="showcase-badge">✦ SMART STUDENT WORKSPACE</div>
+      <h1>Welcome Back, <span class="gradient-text">Future Achiever.</span></h1>
+      <p>
+        Your assignments, study plans, and academic goals
+        are waiting for you. Continue your journey toward success.
+      </p>
+
+      <div class="showcase-card">
+        <div class="showcase-icon">⚡</div>
+        <div>
+          <strong>Stay Ahead of Every Deadline</strong>
+          <span>Plan smarter. Focus better. Achieve more.</span>
+        </div>
+      </div>
+
+      <div class="showcase-decoration">✦</div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-card-icon">✦</div>
+        <span class="eyebrow">WELCOME BACK</span>
+        <h2>Sign in to your account</h2>
+        <p class="auth-subtitle">Enter your details to access your workspace.</p>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input
+              type="email"
+              id="loginEmail"
+              name="email"
+              placeholder="student@example.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label for="loginPassword">Password</label>
+              <a href="#" id="forgotPassword" class="small-link">
+                Forgot Password?
+              </a>
+            </div>
+            <div class="password-field">
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              >
+              <button
+                type="button"
+                class="password-toggle"
+                data-target="loginPassword"
+                aria-label="Show password"
+                aria-pressed="false"
+              >Show</button>
+            </div>
+          </div>
+
+          <div id="loginMessage" class="form-message" role="status" aria-live="polite"></div>
+
+          <button type="submit" class="auth-submit" id="loginButton">
+            Sign In <span>→</span>
+          </button>
+        </form>
+
+        <div class="auth-divider"><span>NEW HERE?</span></div>
+
+        <p class="auth-switch">
+          Don't have an account?
+          <a href="register.html">Create Account</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/auth-ui.js" defer></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
