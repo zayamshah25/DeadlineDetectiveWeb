@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/final-polish.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b1d">
+  <title>Study Planner | Deadline Detective</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/planner.css">
+</head>
+<body class="dashboard-body" data-protected="true" hidden>
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+      <a href="dashboard.html" class="sidebar-brand">
+        <span class="brand-symbol">✦</span>
+        <span>Deadline<span class="brand-accent">Detective</span></span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <a href="dashboard.html" class="sidebar-link">
+          <span>◈</span> Overview
+        </a>
+        <a href="assignments.html" class="sidebar-link">
+          <span>▤</span> My Assignments
+        </a>
+        <a href="planner.html" class="sidebar-link active" aria-current="page">
+          <span>◷</span> Study Planner
+        </a>
+        <a href="analytics.html" class="sidebar-link">
+          <span>▥</span> Analytics
+        </a>
+        <a href="profile.html" class="sidebar-link">
+          <span>♙</span> My Profile
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-user">
+          <div class="user-avatar" id="sidebarAvatar">S</div>
+          <div class="user-details">
+            <strong id="sidebarName">Student</strong>
+            <small>Student Account</small>
+          </div>
+        </div>
+        <button id="logoutButton" class="logout-button">
+          ↪ Logout
+        </button>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="menuToggle" class="menu-toggle"
+            aria-label="Toggle navigation" aria-expanded="false">☰</button>
+          <div class="breadcrumb">Workspace <span>/ Study Planner</span></div>
+        </div>
+        <div class="topbar-right">
+          <span class="live-badge">
+            <span class="live-dot"></span> Firebase Connected
+          </span>
+          <div class="topbar-avatar" id="topbarAvatar">S</div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <section class="planner-hero">
+          <div>
+            <span class="welcome-eyebrow">✦ INTELLIGENT TIME MANAGEMENT</span>
+            <h1>Smart <span class="gradient-text">Study Planner</span></h1>
+            <p>Transform your assignments into a focused daily schedule.</p>
+            <span id="plannerDate" class="today-date"></span>
+          </div>
+          <div class="planner-hero-icon">◷</div>
+        </section>
+
+        <section class="dash-panel planner-config">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-eyebrow">PERSONALIZE YOUR DAY</span>
+              <h2>Plan Your Study Session</h2>
+            </div>
+            <span class="panel-symbol">✦</span>
+          </div>
+
+          <form id="plannerForm" class="planner-form">
+            <div class="planner-field">
+              <label for="studyHours">Available Study Hours</label>
+              <input type="number" id="studyHours"
+                min="0.25" max="24" step="0.25" value="4" required>
+              <small>Choose between 0.25 and 24 hours.</small>
+            </div>
+
+            <div class="planner-field">
+              <label for="startTime">Study Start Time</label>
+              <input type="time" id="startTime" value="14:00" required>
+              <small>Select your preferred starting time.</small>
+            </div>
+
+            <div class="planner-field">
+              <label for="sessionMinutes">Maximum Session Length</label>
+              <select id="sessionMinutes">
+                <option value="30">30 Minutes</option>
+                <option value="45">45 Minutes</option>
+                <option value="60" selected>60 Minutes</option>
+                <option value="90">90 Minutes</option>
+                <option value="120">120 Minutes</option>
+              </select>
+              <small>A 15-minute break separates study sessions.</small>
+            </div>
+
+            <button type="submit" class="dash-primary-btn planner-generate">
+              ⚡ Generate Smart Plan
+            </button>
+          </form>
+        </section>
+
+        <div id="plannerMessage" class="planner-message"
+          role="status" aria-live="polite"></div>
+
+        <section id="planResults" hidden>
+          <div class="planner-stats">
+            <article class="planner-stat">
+              <span>Study Time</span>
+              <strong id="plannedHours">0h</strong>
+              <small>Scheduled work</small>
+            </article>
+            <article class="planner-stat">
+              <span>Break Time</span>
+              <strong id="breakMinutes">0m</strong>
+              <small>Recovery time</small>
+            </article>
+            <article class="planner-stat">
+              <span>Free Study Time</span>
+              <strong id="freeHours">0h</strong>
+              <small>Unused study budget</small>
+            </article>
+            <article class="planner-stat">
+              <span>Tasks Scheduled</span>
+              <strong id="scheduledCount">0</strong>
+              <small>Unique assignments</small>
+            </article>
+          </div>
+
+          <div class="planner-results-grid">
+            <section class="dash-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="panel-eyebrow">YOUR DAILY ROUTINE</span>
+                  <h2>Study Timetable</h2>
+                </div>
+                <span class="panel-symbol">◷</span>
+              </div>
+              <div class="schedule-summary" id="scheduleSummary"></div>
+              <div id="timetable" class="study-timeline"></div>
+            </section>
+
+            <div class="planner-side-panels">
+              <section class="dash-panel">
+                <div class="panel-heading">
+                  <div>
+                    <span class="panel-eyebrow">WHAT COMES NEXT</span>
+                    <h2>Remaining Work</h2>
+                  </div>
+                </div>
+                <div id="remainingTasks" class="remaining-list"></div>
+              </section>
+
+              <section class="dash-panel planner-tip">
+                <span class="panel-eyebrow">SMART RECOMMENDATION</span>
+                <h2>✦ Study Insight</h2>
+                <p id="studyInsight"></p>
+              </section>
+
+              <section class="dash-panel">
+                <span class="panel-eyebrow">CLOUD STORAGE</span>
+                <h2>Save Today's Plan</h2>
+                <p class="save-description">
+                  Store your timetable securely in your Firebase account.
+                </p>
+                <button id="savePlanButton" class="dash-primary-btn"
+                  type="button">Save Plan to Firebase</button>
+                <p id="savedPlanInfo" class="saved-info"></p>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section id="initialPlannerState" class="planner-empty dash-panel">
+          <div class="planner-empty-icon">✦</div>
+          <h2>Your perfect study day starts here.</h2>
+          <p>Choose your available hours and generate your personalized timetable.</p>
+        </section>
+
+        <footer class="dashboard-footer">
+          <span>© <span id="footerYear"></span> Deadline Detective</span>
+          <span>Plan Smart. Achieve More.</span>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/planner.js"></script>
+</body>
+</html>
