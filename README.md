@@ -4,7 +4,7 @@
 **Course:** Mobile Application Development (instructor-approved web development adaptation)  
 **Assignment:** Assignment 1 - Plan, Design and Prototype  
 **Group name / number:** Deadline Detective Web
-
+Live Website: Open Deadline Detective
 ## Group Members
 
 | Name | Student ID |
