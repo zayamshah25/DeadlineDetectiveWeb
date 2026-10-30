@@ -11,7 +11,7 @@
 |---|---|
 | Zayam Ali Shah | SE018 |
 | Amina Zahoor | SE065 |
-| Haseeb Ahmed | SE0056 |
+| Haseeb Ahmed | SE056 |
 
 ## Project Description
 
